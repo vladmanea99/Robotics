@@ -23,7 +23,7 @@ void loop() {
     potentionmeterBlue = analogRead(A2);
     potentionmeterRed = map(potentionmeterRed, 0, 1023, 0, 255);
     potentionmeterGreen = map(potentionmeterGreen, 0, 1023, 0, 255);
-    potentionmeterBlue = map(potentionmeterBlue, 143, 1023, 0, 255);
+      potentionmeterBlue = map(potentionmeterBlue, 138, 1023, 0, 255);
     analogWrite(RED_PIN, potentionmeterRed);
     analogWrite(GREEN_PIN, potentionmeterGreen);
     analogWrite(BLUE_PIN, potentionmeterBlue);
