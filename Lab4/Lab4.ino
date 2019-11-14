@@ -52,6 +52,12 @@ void writeDigit(int n){
   }
 }
 int switchValue = 0;
+
+int minThreshold = 20;
+int maxThreshold = 1000;
+bool joyMoved = false;
+int digit = 0;
+
 void loop() {
   // put your main code here, to run repeatedly:
   /*for (int i = 0; i < 10; i++){
@@ -59,9 +65,36 @@ void loop() {
     delay(1000);
   }
 */
+
   xValue = analogRead(pinX);
   yValue = analogRead(pinY);
   switchValue = digitalRead(pinSW);
+
+  if (xValue < minThreshold && !joyMoved){
+    if (digit == 0){
+      digit = 9;
+    }
+    else{
+      digit--;
+    }
+    writeDigit(digit);
+    joyMoved = true;
+  }
+
+    if (xValue > maxThreshold && !joyMoved){
+    if (digit == 9){
+      digit = 0;
+    }
+    else{
+      digit++;
+    }
+    writeDigit(digit);
+    joyMoved = true;
+  }
+
+  if (xValue >= minThreshold && xValue <= maxThreshold){
+    joyMoved = false;
+  }
 
   Serial.print(xValue);
   Serial.print(" ");
