@@ -89,7 +89,9 @@
 #define NOTE_DS8 4978
 
 int buzzer = 8;
+int buzzerListener = 9;
 int valueOfBuzzer = 0;
+int valueOfListener = 0;
 
 int rpm = 150;
 
@@ -140,30 +142,36 @@ int noteDurations[] = {
   1, 2, 1
 };
 
+int startTime = 0;
+bool started = false;
+
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
 pinMode(buzzer, INPUT);
-
+pinMode(buzzerListener, INPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   valueOfBuzzer = analogRead(buzzer);
-  Serial.println(valueOfBuzzer);
+  valueOfListener = analogRead(buzzerListener);
+  Serial.println(valueOfListener);
 
+  if (valueOfListener > 600){
+    startTime = millis();
+  }
+if (millis() - startTime > 5000){
+  started = true;
+}
+if (started)
     for (int thisNote = 0; thisNote < 45; thisNote++) {
 
-    // to calculate the note duration, take one second divided by the note type.
-    //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
     int noteDuration = 1000 / noteDurations[thisNote];
     tone(buzzer, melody[thisNote], noteDuration);
-
-    // to distinguish the notes, set a minimum time between them.
-    // the note's duration + 30% seems to work well:
     int pauseBetweenNotes = noteDuration * 1.50;
     delay(pauseBetweenNotes);
-    // stop the tone playing:
+   
     noTone(8);
   }
 }
