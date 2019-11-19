@@ -3,7 +3,7 @@ Homework 1(13 LED)
 I connect the LED to the 13th pin in arduino with anode and with cathode at ground and I put a rezistor to not burn the LED.
 I then digitalWrite the 13th pin so the light of the LED would turn on or off
 
-Homework 2 (RGB)
+Homework 3 (RGB)
 
 So the potentiometere has a ground pin, an input voltage pin and in input of analog readeable pin.
 
@@ -16,7 +16,7 @@ I connect the 3 pins of colors through wires to the 3, 5 and 6 digital sockets i
 I read the values of the 3 potentiometers in arduino, I map them to be between (0, 255) and then I connect each potentiometere to a color for the RGB LED.
 
 
-Homework 3 (Buzzer)
+Homework 4 (Buzzer)
 
 This is the homework for the lab with the buzzers.
 
