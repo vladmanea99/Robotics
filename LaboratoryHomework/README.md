@@ -47,3 +47,7 @@ If the button is pressed again, I unlock that certain display, making the moveme
 Moreover I let the control of the movement on the Y axis to switch to a different display.
 
 If the button is pressed again, the new display gets locked one.
+
+Homework 6 (LCD)
+
+https://youtu.be/_8chReQRXf4
