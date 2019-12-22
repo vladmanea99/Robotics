@@ -1,7 +1,7 @@
 #include <LiquidCrystal.h>
 
-const int RS = 12;
-const int enable = 11;
+const int RS = 7;
+const int enable = 6;
 const int d4 = 5;
 const int d5 = 4;
 const int d6 = 3;
@@ -285,7 +285,7 @@ void loop() {
       screenFlags[0] = true;
       printMenuScreen();
     */
-  }
 
+  }
 
 }
