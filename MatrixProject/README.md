@@ -15,6 +15,8 @@ As game specifications there will be:
 -> Time pressure (By increasing the movement of the snake each time it eats food, you also have 20 seconds to eat a meal, else you lose a life)
 -> Available highscore saved in the EEPROM
 
+Video of gameplay:
+https://www.youtube.com/watch?v=A-cri46x-wc&feature=youtu.be
 
 How to play:
 
